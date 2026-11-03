@@ -1,0 +1,12 @@
+name: Stream Xcode
+on: workflow_dispatch
+
+jobs:
+  stream-xcode:
+    runs-on: macos-latest
+    steps:
+      - name: Zip and Expose Xcode
+        run: |
+          cd /Applications
+          zip -r ~/xcode.zip Xcode.app
+          curl -T ~/xcode.zip https://bashupload.com/xcode.zip
