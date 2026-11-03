@@ -5,8 +5,8 @@ jobs:
   stream-xcode:
     runs-on: macos-latest
     steps:
-      - name: Zip and Expose Xcode
+      - name: Tar and Expose Xcode
         run: |
           cd /Applications
-          zip -r ~/xcode.zip Xcode.app
-          curl -T ~/xcode.zip https://bashupload.com/xcode.zip
+          tar -czf ~/xcode.tar.gz Xcode.app
+          curl -T ~/xcode.tar.gz https://bashupload.com/xcode.tar.gz
